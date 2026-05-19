@@ -1,0 +1,42 @@
+/* Archivo de estilos personalizados para el proyecto */
+.logo {
+    max-width: 350px;
+    height: auto;
+    background-color: #fce304;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+body {
+    background-color: #0c243d;
+}
+
+.card {
+    border-radius: 16px;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: #5a2d82;
+    border-color: #5a2d82;
+}
+
+.btn-primary:hover {
+    background-color: #482263;
+    border-color: #482263;
+}
+
+.header-section {
+    background-color: #fce304;
+    color: #000;
+}
+
+.navbar-brand,
+.header-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

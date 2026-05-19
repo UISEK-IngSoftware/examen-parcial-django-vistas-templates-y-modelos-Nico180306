@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Películas{% endblock title %}
+
+{% block content %}
+<h3 class="p-2">Películas</h3>
+<div class="row">
+  {% for movie in movies %}
+  <div class="col-sm-4">
+    <br />
+    <div class="card" style="width: 100%">
+      {% if movie.picture %}
+        <img src="{{ movie.picture.url }}" class="card-img-top" alt="{{ movie.title }}" style="height: 250px; object-fit: cover;" />
+      {% else %}
+        <img src="https://via.placeholder.com/300x250?text=Sin+imagen" class="card-img-top" alt="Sin imagen" style="height: 250px; object-fit: cover;" />
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">
+          <small><strong>Director:</strong> {{ movie.director }}</small><br>
+          <small><strong>Año:</strong> {{ movie.release_year }}</small><br>
+          <small><strong>Género:</strong> {{ movie.genre }}</small>
+        </p>
+        <a href="{% url 'catalogo_peliculas:movie_detail' movie.id %}" class="btn btn-primary">
+          <i class="fa-solid fa-eye"></i> Ver detalles
+        </a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="alert alert-info" role="alert">
+    No hay películas registradas aún.
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

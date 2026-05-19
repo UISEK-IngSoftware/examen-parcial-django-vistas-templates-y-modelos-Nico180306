@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Película{% endblock title %}
+
+{% block content %}
+<div class="row mt-4">
+  <div class="col-md-8 offset-md-2">
+    <h2>Agregar película</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Guardar película</button>
+      <a href="{% url 'catalogo_peliculas:movie_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+</div>
+{% endblock content %}
